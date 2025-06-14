@@ -59,7 +59,7 @@ namespace lab2.Repository
 
         public void Save()
         {
-            throw new NotImplementedException();
+            con.SaveChanges();  
         }
 
         public void Update(Course entity)
