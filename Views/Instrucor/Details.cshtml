@@ -1,0 +1,23 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-5">
+    <div class="card mx-auto shadow" style="max-width: 600px;">
+        <div class="card-header text-center bg-primary text-white">
+            <h2>Instructor @Model.Name</h2>
+        </div>
+
+        <div class="card-body text-center">
+            <img src="~/Images/@Model.Imag" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;" />
+
+            <h4 class="mb-2"><strong>ID:</strong> @Model.Id</h4>
+            <h4 class="mb-2"><strong>Name:</strong> @Model.Name</h4>
+            <h4 class="mb-2"><strong>Salary:</strong> @Model.Salary EGP</h4>
+            <h4 class="mb-2"><strong>Address:</strong> @Model.Address</h4>
+        </div>
+
+        
+    </div>
+</div>

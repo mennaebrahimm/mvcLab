@@ -1,0 +1,61 @@
+﻿@using lab2.ViewModel
+@model InstCoursDept
+@{
+    ViewData["Title"] = "add";
+}
+<h1>add instructor </h1>
+
+
+<form action="/Instrucor/saveadd" method="post">
+
+    <div>
+        <label>Name</label>
+        <input class="form form-control" name="Name" type="text"
+               id="Name" value="@Model?.Name" />
+    </div>
+    <div>
+        <label>Salary</label>
+        <input class="form form-control" name="Salary" type="number"
+               id="Salary" value="@Model?.Salary" />
+    </div>  
+    <div>
+        <label>Address</label>
+        <input class="form form-control" name="Address" type="text"
+               id="Address" value="@Model?.Address" />
+    </div> 
+    <div>
+        <label>Image Path </label>
+            <input class="form form-control" name="Imag" type="text"
+                   id="Imag" value="@Model?.Imag" />
+    </div>
+
+    <div>
+        <label>courses</label>
+        <select class="form form-control" id="course" name="course">
+            @foreach (var cours in Model.courses)
+            {
+                
+                 <option value="@cours.Id">
+                    @cours.Name
+                    </option>
+                
+            }
+        </select>
+    </div> 
+    <div>
+        <label>Departments</label>
+        <select class="form form-control" id="Department" name="Department">
+            @foreach (var Department in Model.Departments)
+            {
+
+                <option value="@Department.Id">
+                    @Department.Name
+                    </option>
+                
+            }
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Create" class="btn btn-success" />
+</form>
+<a href="/Instrucor/Index">Back To List</a>
